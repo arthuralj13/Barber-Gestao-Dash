@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Bil — Entrar</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="titulo"><h1>Black Bil</h1></div>
+        <div class="logo">
+            <img src="../src/logo.jpg" alt="Logo Black Bil">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Agendamentos</a></li>
+                <li><a href="#">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-login">
+
+        <!-- ===== PAINEL ESQUERDO (IMAGEM) ===== -->
+        <div class="painel-esquerdo">
+
+            <!-- Substituir por <img src="..." class="foto-bg"> quando tiver a foto -->
+            <div class="foto-aviso">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                <span>Adicionar foto</span>
+            </div>
+
+            <!-- Rodapé com marca — sobrepõe a foto quando adicionada -->
+            <div class="painel-rodape">
+                <p class="painel-slogan">Beleza &amp; Estilo</p>
+                <p class="painel-sub">ao seu alcance</p>
+            </div>
+
+        </div>
+
+        <!-- ===== PAINEL DIREITO (FORMULÁRIO) ===== -->
+        <div class="painel-direito">
+            <div class="card-form">
+
+                <!-- Cabeçalho do formulário -->
+                <div class="form-cabecalho">
+                    <h2 class="form-titulo" id="form-titulo">Bem-vindo(a) de volta</h2>
+                    <p class="form-subtitulo" id="form-subtitulo">Acesse sua conta para agendar seu atendimento</p>
+                </div>
+
+                <!-- Abas -->
+                <div class="abas">
+                    <button class="aba ativa" id="btn-login" type="button">Entrar</button>
+                    <button class="aba" id="btn-cadastro" type="button">Criar conta</button>
+                </div>
+
+                <!-- Seletor de perfil -->
+                <div class="perfil-selector">
+                    <button class="btn-perfil ativo" id="perfil-cliente" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Cliente</span>
+                    </button>
+                    <button class="btn-perfil" id="perfil-funcionario" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="6" cy="6" r="3"/>
+                            <circle cx="6" cy="18" r="3"/>
+                            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+                            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+                            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+                        </svg>
+                        <span>Funcionário</span>
+                    </button>
+                </div>
+
+                <!-- ===== FORM LOGIN ===== -->
+                <form id="form-login">
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                        </span>
+                        <input type="email" placeholder="E-mail" required autocomplete="email">
+                    </div>
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </span>
+                        <input type="password" id="senha-login" placeholder="Senha" required autocomplete="current-password">
+                        <button type="button" class="btn-olho" data-target="senha-login" aria-label="Mostrar senha">
+                            <svg class="olho-aberto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <svg class="olho-fechado escondido" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                <line x1="1" y1="1" x2="23" y2="23"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="form-extras">
+                        <a href="#" class="link-esqueceu">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-principal">Entrar</button>
+
+                </form>
+
+                <!-- ===== FORM CADASTRO ===== -->
+                <form id="form-cadastro" class="escondido">
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </span>
+                        <input type="text" placeholder="Nome completo" required autocomplete="name">
+                    </div>
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.68 5C1.68 3.99 2.35 3.1 3.35 3.03A2 2 0 0 1 5.37 3h2.5a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 17.92z"/>
+                            </svg>
+                        </span>
+                        <input type="tel" placeholder="Telefone / WhatsApp" required autocomplete="tel">
+                    </div>
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                        </span>
+                        <input type="email" placeholder="E-mail" required autocomplete="email">
+                    </div>
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </span>
+                        <input type="password" id="senha-cad" placeholder="Senha" required autocomplete="new-password">
+                        <button type="button" class="btn-olho" data-target="senha-cad" aria-label="Mostrar senha">
+                            <svg class="olho-aberto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <svg class="olho-fechado escondido" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                <line x1="1" y1="1" x2="23" y2="23"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="input-grupo">
+                        <span class="input-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </span>
+                        <input type="password" id="senha-conf" placeholder="Confirmar senha" required autocomplete="new-password">
+                        <button type="button" class="btn-olho" data-target="senha-conf" aria-label="Mostrar senha">
+                            <svg class="olho-aberto" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <svg class="olho-fechado escondido" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                <line x1="1" y1="1" x2="23" y2="23"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <p class="erro-senha escondido" id="erro-senha">As senhas não coincidem.</p>
+
+                    <button type="submit" class="btn-principal">Criar conta</button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
