@@ -9,90 +9,24 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Outfit', sans-serif;
-}
-
-/* ===== HEADER ===== */
-header {
-    background-color: #a1d5d9;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    flex-shrink: 0;
-}
-
-.titulo h1 {
-    font-family: 'Righteous', cursive;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.titulo h1:hover {
-    transform: scale(1.06);
-}
-
-.logo img {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90px;
-    height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.logo:hover img {
-    transform: translateX(-50%) scale(1.1);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-}
-
-nav a {
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    position: relative;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #8B5E3C;
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
 }
 
 /* ===== LAYOUT DOIS PAINÉIS ===== */
 .pagina-login {
     display: flex;
     flex: 1;
-    overflow: hidden;
+    background: transparent;
+    padding: 0;
 }
 
 /* ===== PAINEL ESQUERDO ===== */
 .painel-esquerdo {
+    display: none;
     flex: 1;
     background: linear-gradient(160deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     position: relative;
-    display: flex;
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
@@ -144,12 +78,14 @@ nav a:hover::after {
 
 /* ===== PAINEL DIREITO ===== */
 .painel-direito {
-    flex: 1;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #f5f7f8;
-    padding: 30px 20px;
+    background: #f5f7f8;
+    border-radius: 24px 24px 0 0;
+    margin-top: -24px;
+    padding: 32px 24px 48px;
     overflow-y: auto;
 }
 
@@ -354,4 +290,58 @@ nav a:hover::after {
 /* ===== UTILITÁRIOS ===== */
 .escondido {
     display: none;
+}
+
+/* ===== HEADER MOBILE ===== */
+.header-mobile {
+    background: linear-gradient(160deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    padding: 48px 30px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 25vh;
+}
+
+.header-marca {
+    font-family: 'Righteous', cursive;
+    font-size: 2.4rem;
+    color: #a1d5d9;
+    line-height: 1.1;
+}
+
+.header-sub {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+/* ===== DESKTOP: dois painéis ===== */
+@media (min-width: 768px) {
+    body { height: 100vh; overflow: hidden; }
+
+    .header-mobile { display: none; }
+
+    .pagina-login {
+        align-items: stretch;
+        justify-content: stretch;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .painel-esquerdo {
+        display: flex;
+    }
+
+    .painel-direito {
+        flex: 1;
+        flex-direction: row;
+        align-items: center;
+        background: #f5f7f8;
+        border-radius: 0;
+        margin-top: 0;
+        padding: 30px 20px;
+        overflow-y: auto;
+    }
 }
