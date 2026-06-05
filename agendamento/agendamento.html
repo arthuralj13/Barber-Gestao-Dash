@@ -9,13 +9,19 @@
 </head>
 <body>
 
+    <!--HEADER-->
     <header>
         <div class="titulo"><h1>Black Bil</h1></div>
         <div class="logo"><img src="../src/logo.jpg" alt="Logo Black Bil"></div>
-        <nav>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="#">Início</a></li>
-                <li><a href="#" class="nav-ativo">Agendamentos</a></li>
+                <li><a href="#a" class="nav-ativo">Agendamentos</a></li>
                 <li><a href="#">Produtos</a></li>
             </ul>
         </nav>
@@ -60,11 +66,26 @@
                 <button class="tab" data-cat="rosto">Rosto</button>
             </div>
 
-            <!-- Espaço reservado para foto da categoria -->
-            <div class="foto-placeholder" id="categoria-foto">
-                <div class="foto-inner">
-                    <span class="foto-icone">📷</span>
-                    <p>Adicionar foto</p>
+            <!-- Accordion de exemplos -->
+            <div class="accordion" id="accordion-fotos">
+                <button class="accordion-toggle" id="accordion-toggle" type="button">
+                    <span class="accordion-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                        <span id="accordion-label-text">Ver exemplos</span>
+                    </span>
+                    <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <div class="accordion-body escondido" id="accordion-body">
+                    <div class="fotos-grid" id="fotos-grid"></div>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 // ===== CATÁLOGO DE SERVIÇOS =====
-const SERVICOS = {
+const SERVICOS_PADRAO = {
     'cabelos-curtos': {
         titulo: 'Cabelos Curtos',
         itens: [
@@ -55,6 +55,13 @@ const SERVICOS = {
     }
 };
 
+const SERVICOS = (() => {
+    const salvo = localStorage.getItem('blackbil_servicos');
+    const data  = salvo ? JSON.parse(salvo) : SERVICOS_PADRAO;
+    Object.values(data).forEach(cat => { if (!cat.fotos) cat.fotos = []; });
+    return data;
+})();
+
 const HORARIOS_MANHA = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30'];
 const HORARIOS_TARDE = ['13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'];
 
@@ -100,6 +107,31 @@ function irParaPasso(n) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// ===== ACCORDION DE FOTOS =====
+function renderAcordeon(cat) {
+    const fotos  = SERVICOS[cat].fotos || [];
+    const label  = document.getElementById('accordion-label-text');
+    const grid   = document.getElementById('fotos-grid');
+    const toggle = document.getElementById('accordion-toggle');
+    const body   = document.getElementById('accordion-body');
+
+    label.textContent = fotos.length > 0
+        ? `Ver exemplos (${fotos.length})`
+        : 'Ver exemplos';
+
+    grid.innerHTML = fotos.length > 0
+        ? fotos.map(f => `<img class="foto-thumb" src="${f.url}" alt="Exemplo de serviço">`).join('')
+        : '<p class="fotos-vazia">Nenhuma foto disponível para esta categoria.</p>';
+
+    toggle.classList.remove('aberto');
+    body.classList.add('escondido');
+}
+
+document.getElementById('accordion-toggle').addEventListener('click', () => {
+    document.getElementById('accordion-toggle').classList.toggle('aberto');
+    document.getElementById('accordion-body').classList.toggle('escondido');
+});
+
 // ===== PASSO 1: SERVIÇOS =====
 function renderServicos(cat) {
     const lista = document.getElementById('servicos-lista');
@@ -143,6 +175,7 @@ document.querySelectorAll('.tab').forEach(tab => {
         estado.servicoSelecionado = null;
         document.getElementById('btn-proximo-1').disabled = true;
         renderServicos(tab.dataset.cat);
+        renderAcordeon(tab.dataset.cat);
     });
 });
 
@@ -266,7 +299,24 @@ function preencherResumo() {
 document.getElementById('btn-voltar-4').addEventListener('click', () => irParaPasso(3));
 document.getElementById('btn-confirmar').addEventListener('click', () => irParaPasso(5));
 
+// ===== HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('ativo');
+    navMenu.classList.toggle('aberto');
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('ativo');
+        navMenu.classList.remove('aberto');
+    });
+});
+
 // ===== INIT =====
 renderServicos(estado.categoriaAtual);
+renderAcordeon(estado.categoriaAtual);
 renderCalendario();
 irParaPasso(1);
