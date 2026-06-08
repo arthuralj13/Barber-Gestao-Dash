@@ -1,0 +1,23 @@
+/* Importa base do cliente — mesma linguagem visual */
+@import url('../../cliente/login/login.css');
+
+/* ===== AJUSTES EXCLUSIVOS DO LOGIN DE FUNCIONÁRIO ===== */
+
+/* Remove as abas (não há "Criar conta") */
+.abas { display: none; }
+
+/* Rodapé informativo */
+.rodape-form {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+/* Mensagem de erro de credenciais */
+.erro-login {
+    font-size: 0.82rem;
+    color: #ef4444;
+    margin-top: -6px;
+    margin-bottom: 12px;
+}
